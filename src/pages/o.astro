@@ -1,0 +1,11 @@
+---
+import Overlay from "../components/Overlay.svelte";
+const id = Astro.url.searchParams.get("id");
+const width = Number(Astro.url.searchParams.get("w"));
+const height = Number(Astro.url.searchParams.get("h"));
+---
+
+<div class="w-full h-full bg-none">
+  <Overlay {id} {width} {height} client:only="svelte" />
+</div>
+

@@ -1,0 +1,28 @@
+{
+  "name": "phrogbook",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^3.1.1",
+    "@astrojs/tailwind": "^4.0.0",
+    "@lucia-auth/adapter-prisma": "^3.0.1",
+    "@lucia-auth/oauth": "^2.2.0",
+    "@prisma/client": "^5.2.0",
+    "astro": "^2.10.12",
+    "lucia": "^2.4.0",
+    "partykit": "^0.0.0-3228764",
+    "partysocket": "^0.0.0-3228764",
+    "svelte": "^4.2.0",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.2.0"
+  }
+}

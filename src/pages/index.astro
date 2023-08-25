@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const session = await Astro.locals.auth.validate();
+const user = session?.user;
+---
+
+<BaseLayout title={"Home"}>
+  {
+    user ? (
+     <a href="/home">{user.twitch_username}</a> 
+    )
+    : <a href="/login">Login</a>
+  }
+</BaseLayout>

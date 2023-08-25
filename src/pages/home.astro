@@ -1,0 +1,18 @@
+---
+import LinksControl from "../components/LinksControl.svelte";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const session = await Astro.locals.auth.validate();
+if (!session) Astro.redirect("/login", 302);
+
+const user = session?.user;
+---
+
+<BaseLayout title="Home">
+  <form method="POST" action="/logout" class="self-end">
+    <button>Logout</button>
+  </form>
+  <h1 class="text-5xl font-bold text-center">{user?.twitch_username}, It's Phroggin' Time</h1>
+  <LinksControl client:only="svelte" />
+</BaseLayout>
+
