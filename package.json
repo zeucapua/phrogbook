@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npx partykit deploy server/index.ts --name phrog-party",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/svelte": "^3.1.1",
     "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vercel": "^3.8.2",
     "@lucia-auth/adapter-prisma": "^3.0.1",
     "@lucia-auth/oauth": "^2.2.0",
     "@prisma/client": "^5.2.0",
