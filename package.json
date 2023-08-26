@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && npx partykit deploy server/index.ts --name phrog-party",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deployParty": "npx partykit env add PUBLIC_PHROG_APP_URL && npx partykit deploy"
   },
   "dependencies": {
     "@astrojs/svelte": "^3.1.1",

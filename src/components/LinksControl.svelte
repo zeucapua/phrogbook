@@ -1,15 +1,17 @@
 <script lang="ts">
+  const { PUBLIC_PHROG_APP_URL } = import.meta.env.PUBLIC_PHROG_APP_URL;
   let overlay_url : string; 
   let watcher_url : string;
 
   function generateLinks() {
     let random_id = Math.floor(Math.random() * (999 - 101) + 100);
-    overlay_url = `http://localhost:3000/o?id=${random_id}`;
-    watcher_url = `http://localhost:3000/w?id=${random_id}`;
+    overlay_url = `${import.meta.env.DEV ? "localhost:1999" : PUBLIC_PHROG_APP_URL}/o?id=${random_id}`;
+    watcher_url = `${import.meta.env.DEV ? "localhost:1999" : PUBLIC_PHROG_APP_URL}/w?id=${random_id}`;
   }
 
   function openOverlay() {
-    window.open(overlay_url, "Overlay Display", "width=500,height=500,popup");
+    // change width and height with user input later
+    window.open(overlay_url, "Overlay Display", "width=1920,height=1080,popup");
   }
 </script>
 

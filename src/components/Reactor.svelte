@@ -1,10 +1,11 @@
 <script lang="ts">
   import PartySocket from "partysocket";
+  const { PUBLIC_PHROG_APP_URL } = import.meta.env.PUBLIC_PHROG_APP_URL;
 
   export let id : string;
   export let src : string;
   const socket = new PartySocket({
-    host: "localhost:1999",
+    host: import.meta.env.DEV ? "localhost:1999" : PUBLIC_PHROG_APP_URL, 
     room: id
   });
 </script>

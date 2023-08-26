@@ -2,6 +2,7 @@
   import { tick } from "svelte";
   import { scale, fly } from "svelte/transition";
   import PartySocket from "partysocket";
+  const { PUBLIC_PHROG_APP_URL } = import.meta.env.PUBLIC_PHROG_APP_URL;
 
   export let id : string;
   export let width : number;
@@ -9,7 +10,7 @@
   let reactions : { src: string, fading: boolean }[] = [];
 
   const socket = new PartySocket({
-    host: "localhost:1999",
+    host: import.meta.env.DEV ? "localhost:1999" : PUBLIC_PHROG_APP_URL,
     room: id
   });
 
