@@ -19,8 +19,7 @@ export const auth = lucia({
 export const twitch_auth = twitch(auth, {
   clientId: import.meta.env.TWITCH_CLIENT_ID as string,
   clientSecret: import.meta.env.TWITCH_CLIENT_SECRET as string,
-  redirectUri: "http://localhost:3000/login/twitch/callback"
-
+  redirectUri: import.meta.env.DEV ? "http://localhost:3000/login/twitch/callback" : "https://phrogbook.vercel.app/login/twitch/callback"
 });
 
 export type Auth = typeof auth;
