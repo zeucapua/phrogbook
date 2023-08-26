@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "prisma db push && deployParty && astro build",
+    "build": "prisma db push && npx partykit env add PUBLIC_PHROG_APP_URL && npx partykit deploy && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "deployParty": "npx partykit env add PUBLIC_PHROG_APP_URL && npx partykit deploy"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/svelte": "^3.1.1",
