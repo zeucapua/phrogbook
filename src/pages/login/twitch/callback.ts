@@ -8,6 +8,7 @@ export const get : APIRoute = async (context) => {
   const code = context.url.searchParams.get("code");
 
   if (!stored_state || !state || stored_state !== state || !code) {
+    console.log({ stored_state, state, code });
     return new Response(null, { status: 400 });
   }
 
