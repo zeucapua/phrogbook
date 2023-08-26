@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "prisma db push && npx partykit env add PUBLIC_PHROG_APP_URL && npx partykit deploy server/index.ts && astro build",
+    "build": "prisma db push && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
