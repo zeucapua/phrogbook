@@ -4,8 +4,8 @@
 
   function generateLinks() {
     let random_id = Math.floor(Math.random() * (999 - 101) + 100);
-    overlay_url = `http://localhost:3000/o?id=${random_id}&w=500&h=500`;
-    watcher_url = `http://localhost:3000/w?id=${random_id}&w=500&h=500`;
+    overlay_url = `http://localhost:3000/o?id=${random_id}`;
+    watcher_url = `http://localhost:3000/w?id=${random_id}`;
   }
 
   function openOverlay() {

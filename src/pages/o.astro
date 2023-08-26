@@ -1,11 +1,18 @@
 ---
 import Overlay from "../components/Overlay.svelte";
-const id = Astro.url.searchParams.get("id");
+import BaseLayout from "../layouts/BaseLayout.astro";
+const id = Astro.url.searchParams.get("id") as string;
 const width = Number(Astro.url.searchParams.get("w"));
 const height = Number(Astro.url.searchParams.get("h"));
 ---
+<style>
+  BaseLayout {
+    background-color: rgba(0, 0, 0, 100);
+  }
+</style>
 
-<div class="w-full h-full bg-none">
-  <Overlay {id} {width} {height} client:only="svelte" />
-</div>
-
+<BaseLayout title="Overlay Display | Phrogbook">
+  <div class="w-full h-full bg-none">
+    <Overlay {id} {width} {height} client:only="svelte" />
+  </div>
+</BaseLayout>

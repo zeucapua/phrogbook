@@ -1,8 +1,10 @@
 ---
 import Reactor from "../components/Reactor.svelte";
-const id = Astro.url.searchParams.get("id");
+const id = Astro.url.searchParams.get("id") as string;
 
 ---
 
 <p>watcher: {id}</p>
 <Reactor {id} src="https://www.pngkey.com/png/full/145-1455376_lul-png-graphic-library-library-lul-twitch-emote.png" client:only="svelte" />
+<Reactor {id} src="https://freepngimg.com/thumb/tshirt/75140-on-youtube-pepe-emote-frog-t-shirt-the.png" client:only="svelte" />
+<Reactor {id} src="https://i.pinimg.com/originals/6f/24/e3/6f24e3aedfaa19db8f1fb2984cd11cf3.png" client:only="svelte" />

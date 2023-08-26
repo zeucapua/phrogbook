@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from "svelte";
-  import { fade, fly } from "svelte/transition";
+  import { scale, fly } from "svelte/transition";
   import PartySocket from "partysocket";
 
   export let id : string;
@@ -31,18 +31,19 @@
 
 </script>
 
-<div class="relative bg-[#00ff00]" style:width={width + "px"} style:height={height + "px"}>
+<svelte:window bind:innerWidth={width} bind:innerHeight={height} />
+<div class="relative" style:width={width + "px"} style:height={height + "px"}>
   {#each reactions as r}
     {#if !r.fading}
       <img
         src={r.src}
         alt="banana"
-        class="w-32 h-32"
+        class="w-16 h-16"
         style:position="absolute"
         style:left={Math.floor(Math.random() * width) + "px"}
-        style:bottom={Math.floor(Math.random() * height) + "px"}
-        in:fade={{ duration: 3000 }}
-        out:fly={{ y: -500, delay: 300, duration: 2000 }}
+        style:bottom=0
+        in:scale={{ duration: 3000 }}
+        out:fly={{ y: -500, delay: 300, duration: 5000 }}
       />
     {/if}
   {/each}

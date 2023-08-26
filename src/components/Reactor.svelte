@@ -13,6 +13,6 @@
   <img
     {src}
     alt="Reactor button"
-    class="w-8 h-8"
+    class="w-16 h-16"
   />
 </button>
